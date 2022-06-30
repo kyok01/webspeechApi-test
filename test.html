@@ -36,6 +36,9 @@
                     if (results[i].isFinal)
                     {
                         document.getElementById('result_text').innerHTML = results[i][0].transcript;
+                        console.log(document.getElementById('result_text').value); //debug
+                        let fixText = document.getElementById('fix_text').value;
+                        document.getElementById('fix_text').innerHTML = fixText + document.getElementById('result_text').value + "。";
                         vr_function();
                     }
                     else
@@ -53,9 +56,15 @@
 </head>
 
 <body>
+    <h2>入力完了欄</h2>
+    <textarea id="fix_text" cols="100" rows="10">
+    </textarea>
+    <br>
+    <h2>音声認識中欄</h2>
     <textarea id="result_text" cols="100" rows="10">
     </textarea>
     <br>
+    <h3>ステータス</h3>
     <textarea id="status" cols="100" rows="1">
     </textarea>
     <br>
